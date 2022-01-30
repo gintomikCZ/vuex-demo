@@ -1,19 +1,40 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Employees from '../components/Employees.vue'
+import EmployeeDetail from '../components/EmployeeDetail.vue'
+import EmployeesForm from '../components/EmployeesForm.vue'
+import TransitionsDemo from '../components/TransitionsDemo.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Employees',
+    component: Employees
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/employees',
+    name: 'Employees',
+    component: Employees
+  },
+  {
+    path: '/transitions',
+    name: 'TransitionsDemo',
+    component: TransitionsDemo
+  },
+  {
+    path: '/employee/:id',
+    name: 'Employee',
+    component: EmployeeDetail
+  },
+  {
+    path: '/employeesForm',
+    name: 'employeesForm',
+    component: EmployeesForm
+  },
+  {
+    path: '/employeesForm/:id',
+    name: 'employeesFormEdit',
+    component: EmployeesForm
+
   }
 ]
 
